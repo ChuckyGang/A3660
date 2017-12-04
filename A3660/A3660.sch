@@ -3842,9 +3842,7 @@ Cad by Edu Arana</description>
 <part name="P+7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="P+8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="P+9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
-<part name="RP100B" library="A3660" deviceset="RP743-8" device="" value="1K"/>
 <part name="RP100A" library="A3660" deviceset="RP743-8" device="" value="1K"/>
-<part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="RP400B" library="A3660" deviceset="RP743-8" device="" value="1K"/>
 <part name="P+10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
@@ -4038,6 +4036,8 @@ Cad by Edu Arana</description>
 <part name="P+50" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="C400" library="A3660" deviceset="RH5VA43A" device=""/>
 <part name="GND37" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="R100A" library="A3660" deviceset="R0805" device="" value="1k"/>
+<part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -4103,6 +4103,8 @@ Cad by Edu Arana</description>
 <instance part="+5V" gate="G$1" x="-195.58" y="124.46"/>
 <instance part="GND42" gate="1" x="-203.2" y="116.84"/>
 <instance part="P+50" gate="1" x="-203.2" y="134.62"/>
+<instance part="R100A" gate="G$1" x="-175.26" y="81.28"/>
+<instance part="GND3" gate="1" x="-185.42" y="81.28" rot="R270"/>
 </instances>
 <busses>
 <bus name="060D[0..31]">
@@ -4634,6 +4636,11 @@ Cad by Edu Arana</description>
 <wire x1="-203.2" y1="124.46" x2="-203.2" y2="119.38" width="0.1524" layer="91"/>
 <pinref part="GND42" gate="1" pin="GND"/>
 </segment>
+<segment>
+<pinref part="R100A" gate="G$1" pin="1"/>
+<wire x1="-180.34" y1="81.28" x2="-182.88" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="GND3" gate="1" pin="GND"/>
+</segment>
 </net>
 <net name="060D0" class="0">
 <segment>
@@ -5022,13 +5029,6 @@ Cad by Edu Arana</description>
 <pinref part="U102" gate="G$1" pin="TMS"/>
 <wire x1="-114.3" y1="78.74" x2="-152.4" y2="78.74" width="0.1524" layer="91"/>
 <label x="-152.4" y="78.74" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="TCK" class="0">
-<segment>
-<pinref part="U102" gate="G$1" pin="TCK"/>
-<wire x1="-114.3" y1="81.28" x2="-134.62" y2="81.28" width="0.1524" layer="91"/>
-<label x="-134.62" y="81.28" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="_TBI" class="0">
@@ -5570,6 +5570,13 @@ Cad by Edu Arana</description>
 <pinref part="U102" gate="G$1" pin="CLKEN"/>
 <wire x1="-114.3" y1="129.54" x2="-116.84" y2="129.54" width="0.1524" layer="91"/>
 <label x="-116.84" y="129.54" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="TCK" class="0">
+<segment>
+<pinref part="U102" gate="G$1" pin="TCK"/>
+<wire x1="-114.3" y1="81.28" x2="-170.18" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="R100A" gate="G$1" pin="2"/>
 </segment>
 </net>
 </nets>
@@ -6605,9 +6612,7 @@ Cad by Edu Arana</description>
 <instance part="P+7" gate="1" x="53.34" y="109.22"/>
 <instance part="P+8" gate="1" x="53.34" y="127"/>
 <instance part="P+9" gate="1" x="53.34" y="142.24"/>
-<instance part="RP100B" gate="G$1" x="129.54" y="124.46"/>
 <instance part="RP100A" gate="G$1" x="129.54" y="106.68"/>
-<instance part="GND3" gate="1" x="114.3" y="139.7" rot="R180"/>
 <instance part="GND4" gate="1" x="114.3" y="121.92" rot="R180"/>
 <instance part="RP400B" gate="G$1" x="210.82" y="127"/>
 <instance part="P+10" gate="1" x="198.12" y="142.24"/>
@@ -7616,55 +7621,7 @@ Cad by Edu Arana</description>
 <label x="157.48" y="111.76" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="TCK" class="0">
-<segment>
-<pinref part="RP100B" gate="G$1" pin="5"/>
-<wire x1="137.16" y1="121.92" x2="139.7" y2="121.92" width="0.1524" layer="91"/>
-<label x="139.7" y="121.92" size="1.778" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="N$8" class="0">
-<segment>
-<pinref part="RP100B" gate="G$1" pin="6"/>
-<wire x1="137.16" y1="124.46" x2="157.48" y2="124.46" width="0.1524" layer="91"/>
-<label x="157.48" y="124.46" size="1.778" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="N$9" class="0">
-<segment>
-<pinref part="RP100B" gate="G$1" pin="7"/>
-<wire x1="137.16" y1="127" x2="139.7" y2="127" width="0.1524" layer="91"/>
-<label x="139.7" y="127" size="1.778" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="N$10" class="0">
-<segment>
-<pinref part="RP100B" gate="G$1" pin="8"/>
-<wire x1="137.16" y1="129.54" x2="157.48" y2="129.54" width="0.1524" layer="91"/>
-<label x="157.48" y="129.54" size="1.778" layer="95" xref="yes"/>
-</segment>
-</net>
 <net name="GND" class="0">
-<segment>
-<pinref part="RP100B" gate="G$1" pin="4"/>
-<wire x1="121.92" y1="121.92" x2="119.38" y2="121.92" width="0.1524" layer="91"/>
-<wire x1="119.38" y1="121.92" x2="119.38" y2="124.46" width="0.1524" layer="91"/>
-<wire x1="119.38" y1="124.46" x2="119.38" y2="127" width="0.1524" layer="91"/>
-<wire x1="119.38" y1="127" x2="119.38" y2="129.54" width="0.1524" layer="91"/>
-<wire x1="119.38" y1="129.54" x2="119.38" y2="134.62" width="0.1524" layer="91"/>
-<wire x1="119.38" y1="134.62" x2="114.3" y2="134.62" width="0.1524" layer="91"/>
-<wire x1="114.3" y1="134.62" x2="114.3" y2="137.16" width="0.1524" layer="91"/>
-<pinref part="GND3" gate="1" pin="GND"/>
-<pinref part="RP100B" gate="G$1" pin="3"/>
-<wire x1="121.92" y1="124.46" x2="119.38" y2="124.46" width="0.1524" layer="91"/>
-<junction x="119.38" y="124.46"/>
-<pinref part="RP100B" gate="G$1" pin="2"/>
-<wire x1="121.92" y1="127" x2="119.38" y2="127" width="0.1524" layer="91"/>
-<junction x="119.38" y="127"/>
-<pinref part="RP100B" gate="G$1" pin="1"/>
-<wire x1="121.92" y1="129.54" x2="119.38" y2="129.54" width="0.1524" layer="91"/>
-<junction x="119.38" y="129.54"/>
-</segment>
 <segment>
 <pinref part="RP100A" gate="G$1" pin="4"/>
 <wire x1="121.92" y1="104.14" x2="119.38" y2="104.14" width="0.1524" layer="91"/>
